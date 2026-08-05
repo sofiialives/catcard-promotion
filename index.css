@@ -789,10 +789,15 @@ a {
 }
 
 .feature-panel__list--cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 24px;
+  display: block;
+  columns: 2;
+  column-gap: 24px;
 }
+.feature-panel__list--cols li {
+  break-inside: avoid;
+  margin-bottom: 8px;
+}
+.feature-panel__list--cols li:last-child { margin-bottom: 0; }
 
 @media (max-width: 900px) {
   .feature-panel {
@@ -802,7 +807,7 @@ a {
   }
 
   .feature-panel__list--cols {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
 }
 
